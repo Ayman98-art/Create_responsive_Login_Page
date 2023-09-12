@@ -1,0 +1,689 @@
+/* Global css */
+:root{
+    --Smoke-White-Color: #cccccc6c;
+    --White-Color: #fff;
+    --black-two: #111;
+    --Brown-three: #333;
+    --sliver-four: #666;
+    --orange-five: #997825;
+
+    --f-w400: 400;
+    --f-w600: 600;
+
+    --w-100: 100%;
+    --basic-f-s: 16px;
+
+    --pt: 4px; 
+    --pb: 4px; 
+    --py: 4px;
+    --pl: 4px; 
+    --pr: 4px;
+    --px: 4px;
+
+    --m-tb: 4px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Smoke-White-Color);
+    font-size: var(--basic-f-s);
+    font-weight: var(--f-w400);
+    font-family: Poppins;
+    line-height: normal;
+    font-style: normal;
+    margin: 16px 0px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+a{
+    text-decoration-line: underline;
+}
+
+/* login layout */
+.container{
+    width: 75%;
+    margin: auto;
+    background-color: var(--White-Color);
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-lg-md-6{
+    width: 50%;
+    margin: auto;
+}
+
+/* left-side */
+.left-side{
+    position: relative;
+}
+
+.left-side-content{
+    position: absolute;
+    top: 142px;
+    left: 62px;
+    width: 75%;
+    color: var(--White-Color);
+    text-align: left;
+}
+
+.left-side-content h1{
+    font-size: 56px;
+    font-weight: var(--f-w600);
+}
+
+.left-side-content p{
+    font-size: 24px;
+    line-height: 1.3;
+    padding-top: calc( var(--pt) * 2) ;
+}
+
+/* right-side */
+.right-side{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: calc( var(--pt) * 16);
+}
+
+.sign-up{
+    position: relative;
+    right: -20%;
+    top: -90px;
+}
+
+.welcome{
+    width: var(--w-100);
+    color: var(--Brown-three);
+    font-size: calc(var(--basic-f-s) * 2);
+    padding-bottom: calc(var(--pb) * 6);
+    padding-left: calc(var(--pl) * 12);
+}
+
+.btn-login{
+    padding: 0px calc(var(--pt) * 12);
+}
+
+.btn-login a img{
+    margin: var(--m-tb) 0px;
+}
+
+.line{
+    width: var(--w-100);
+    padding: calc(var(--py) * 8 ) 0px;
+    position: relative;
+}
+
+hr{
+    width: 80%;
+    margin: auto;
+}
+
+.span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--White-Color);
+    text-align: center;
+    padding-top: 12px;
+}
+
+.input-login{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-email,.input-password{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 16px;
+    margin: var(--m-tb) 0px;
+    color: var(--sliver-four);
+}
+
+:is(.input-email, .input-password) :is(input){
+    width: 400px;
+    height: 42px;
+    border-radius: 12px;
+    margin-top: 5px;
+    border: 1px solid var(--black-two);
+    transition: all .3s;
+}
+
+:is(.input-email, .input-password) :is(input):focus{
+    border-radius: 0px !important;
+    outline: none !important;
+}
+
+.pass-hide{
+    display: flex;
+    justify-content: space-between;
+}
+
+.getPass{
+    width: var(--w-100);
+    text-align: right;
+    padding-right: calc(var(--pr) * 12.5);
+}
+
+.getPass a{
+    color: var(--black-two);
+    font-size: 16px;
+}
+
+.btn-signIn{
+    width: 80%;
+    padding: calc(var(--py) * 4) 0px;
+}
+
+.btn-signIn button{
+    font-size: calc(var(--basic-f-s) * 1.3);
+    padding: calc(var(--py) * 4) 0px;
+    background: var(--orange-five);
+    color: var(--White-Color);
+    border: 1px solid transparent;
+    border-radius: 32px;
+    cursor: pointer;
+    width: 50%;
+}
+
+:is(.sign-up, .btn-signIn) :is(p){
+    color: var(--Brown-three);
+    font-size: var(--basic-f-s);
+    padding-top: calc(var(--pt) * 3);
+}
+
+:is(.sign-up, .btn-signIn) :is(p a){
+    color: var(--black-two);
+    font-size: var(--basic-f-s);
+}
+
+/* media Query */
+
+@media (max-width: 359px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+
+    .left-side-content {
+        top: 52px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .left-side-content h1 {
+        font-size: 32px;
+        padding: calc( var(--px) * 1);
+    }
+
+    .left-side-content p {
+        font-size: 14px;
+        padding: calc( var(--px) * 1);
+    }
+
+    .right-side {
+        padding-top: calc( var(--pt) * 8);
+    }
+
+    .sign-up {
+        right: 0%;
+        top: -30px;
+    }
+
+    .welcome {
+        font-size: calc(var(--basic-f-s) * 1.5);
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .btn-login {
+        padding: 0px calc(var(--pt) * 3);
+    }
+
+    .line {
+        padding: calc(var(--py) * 4 ) 0px;
+    }
+
+    :is(.input-email, .input-password) :is(input) {
+        width: 185px;
+        height: 27px;
+    }
+
+    .pass-hide {
+        flex-direction: column;
+    }
+
+    div.input-login > div.input-password > div > div:nth-child(2){
+    padding: 10px 0px;
+    }
+
+    .getPass {
+        padding-right: calc(var(--pr) * 5);
+    }
+
+    .btn-signIn {
+        width: 100%;
+        padding-left: calc(var(--pl) * 3);
+    }
+
+    .btn-signIn button {
+        font-size: calc(var(--basic-f-s) * 1.3);
+        padding: calc(var(--py) * 2) 0px;
+    }
+
+    :is(.sign-up, .btn-signIn) :is(p) {
+        padding-top: calc(var(--pt) * 2);
+    }
+
+}
+
+@media (max-width: 415px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+
+    .left-side-content {
+        top: 52px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .left-side-content h1 {
+        font-size: 42px;
+        padding: calc( var(--px) * 1);
+    }
+
+    .left-side-content p {
+        font-size: 18px;
+        padding: calc( var(--px) * 1);
+    }
+
+    .right-side {
+        padding-top: calc( var(--pt) * 12);
+    }
+
+    .sign-up {
+        right: 0%;
+        top: -30px;
+    }
+
+    .welcome {
+        font-size: calc(var(--basic-f-s) * 1.5);
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .btn-login {
+        padding: 0px calc(var(--pt) * 2);
+    }
+
+    .line {
+        padding: calc(var(--py) * 7) 0px;
+    }
+
+    :is(.input-email, .input-password) :is(input) {
+        width: 240px;
+        height: 27px;
+    }
+
+    .pass-hide {
+        align-items: center;
+    }
+
+    .getPass {
+        padding-left: calc(var(--pl) * 6);
+        text-align: left;
+    }
+
+    .btn-signIn {
+        width: 100%;
+        padding-left: calc(var(--pl) * 3);
+    }
+
+    .btn-signIn button {
+        font-size: calc(var(--basic-f-s) * 1.3);
+        padding: calc(var(--py) * 2) 0px;
+    }
+
+    :is(.sign-up, .btn-signIn) :is(p) {
+        padding-top: calc(var(--pt) * 2);
+    }
+
+}
+
+@media (max-width: 499px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+
+    .left-side-content {
+        top: 52px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .left-side-content h1 {
+        font-size: 42px;
+        padding: calc( var(--px) * 1);
+    }
+
+    .left-side-content p {
+        font-size: 18px;
+        padding: calc( var(--px) * 1);
+    }
+
+    .right-side {
+        padding-top: calc( var(--pt) * 12);
+    }
+
+    .sign-up {
+        right: 0%;
+        top: -30px;
+    }
+
+    .welcome {
+        font-size: calc(var(--basic-f-s) * 1.5);
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .btn-login {
+        padding: 0px calc(var(--pt) * 2);
+    }
+
+    .line {
+        padding: calc(var(--py) * 7) 0px;
+    }
+
+    :is(.input-email, .input-password) :is(input) {
+        width: 300px;
+        height: 34px;
+    }
+
+    .pass-hide {
+        align-items: center;
+    }
+
+    .getPass {
+        padding-right: calc(var(--pr) * 8);
+        text-align: right;
+    }
+
+    .btn-signIn {
+        width: 100%;
+        padding-left: calc(var(--pl) * 3);
+    }
+
+    .btn-signIn button {
+        font-size: calc(var(--basic-f-s) * 1.3);
+        padding: calc(var(--py) * 2) 0px;
+    }
+
+    :is(.sign-up, .btn-signIn) :is(p) {
+        padding-top: calc(var(--pt) * 2);
+    }
+
+}
+
+@media (max-width: 750px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+
+    .left-side-content {
+        top: 52px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .left-side-content h1 {
+        font-size: 56px;
+        padding: calc( var(--px) * 2);
+    }
+
+    .left-side-content p {
+        font-size: 24px;
+        padding: calc( var(--px) * 2);
+    }
+
+    .right-side {
+        padding-top: calc( var(--pt) * 12);
+    }
+
+    .sign-up {
+        right: -25%;
+        top: -30px;
+    }
+
+    .welcome {
+        font-size: calc(var(--basic-f-s) * 1.5);
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .btn-login {
+        padding: 0px calc(var(--pt) * 2);
+    }
+
+    .line {
+        padding: calc(var(--py) * 12) 0px;
+    }
+
+    :is(.input-email, .input-password) :is(input) {
+        width: 450px;
+        height: 37px;
+    }
+
+    .pass-hide {
+        align-items: center;
+    }
+
+    .getPass {
+        padding-right: calc(var(--pr) * 5);
+        text-align: right;
+    }
+
+    .btn-signIn {
+        width: 95%;
+        padding-left: calc(var(--pl) * 4);
+    }
+
+    .btn-signIn button {
+        font-size: calc(var(--basic-f-s) * 1.3);
+        padding: calc(var(--py) * 3) 0px;
+    }
+
+    :is(.sign-up, .btn-signIn) :is(p) {
+        padding-top: calc(var(--pt) * 2);
+    }
+
+}
+
+@media (max-width: 847px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+
+    .left-side-content {
+        top: 52px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .left-side-content h1 {
+        font-size: 56px;
+        padding: calc( var(--px) * 2);
+    }
+
+    .left-side-content p {
+        font-size: 24px;
+        padding: calc( var(--px) * 2);
+    }
+
+    .right-side {
+        padding-top: calc( var(--pt) * 12);
+    }
+
+    .sign-up {
+        right: -25%;
+        top: -30px;
+    }
+
+    .welcome {
+        font-size: calc(var(--basic-f-s) * 1.5);
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .btn-login {
+        padding: 0px calc(var(--pt) * 2);
+    }
+
+    .line {
+        padding: calc(var(--py) * 12) 0px;
+    }
+
+    :is(.input-email, .input-password) :is(input) {
+        width: 515px;
+        height: 47px;
+    }
+
+    .pass-hide {
+        align-items: center;
+    }
+
+    .getPass {
+        padding-right: calc(var(--pr) * 8);
+        text-align: right;
+    }
+
+    .btn-signIn {
+        width: 95%;
+        padding-left: calc(var(--pl) * 4);
+    }
+
+    .btn-signIn button {
+        font-size: calc(var(--basic-f-s) * 1.3);
+        padding: calc(var(--py) * 3) 0px;
+    }
+
+    :is(.sign-up, .btn-signIn) :is(p) {
+        padding-top: calc(var(--pt) * 2);
+    }
+
+}
+
+@media (max-width: 1110px) {
+    .container {
+        width: 95%;
+        margin: auto;
+        background-color: var(--White-Color);
+    }
+
+    .left-side-content {
+        top: 52px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .left-side-content h1 {
+        font-size: 56px;
+        padding: calc( var(--px) * 2);
+    }
+
+    .left-side-content p {
+        font-size: 24px;
+        padding: calc( var(--px) * 2);
+    }
+
+    .right-side {
+        padding-top: calc( var(--pt) * 20);
+    }
+
+    .sign-up {
+        right: -15%;
+        top: -30px;
+    }
+
+    .welcome {
+        font-size: calc(var(--basic-f-s) * 1.5);
+    }
+
+    .btn-login {
+        padding: 0px calc(var(--pt) * 6);
+    }
+
+    .line {
+        padding: calc(var(--py) * 8) 0px;
+    }
+
+    :is(.input-email, .input-password) :is(input) {
+        width: 400px;
+        height: 37px;
+    }
+
+    .pass-hide {
+        align-items: center;
+    }
+
+    .getPass {
+        padding-right: calc(var(--pr) * 8);
+        text-align: right;
+    }
+
+    .btn-signIn {
+        width: 80%;
+        padding-left: calc(var(--pl) * 0);
+    }
+
+    .btn-signIn button {
+        font-size: calc(var(--basic-f-s) * 1.3);
+        padding: calc(var(--py) * 3) 0px;
+    }
+
+    :is(.sign-up, .btn-signIn) :is(p) {
+        padding-top: calc(var(--pt) * 2);
+    }
+
+}
